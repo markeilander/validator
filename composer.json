@@ -1,0 +1,22 @@
+{
+  "name": "eilander/validator",
+  "description": "Laravel 5 validator package.",
+  "keywords": ["laravel", "validator", "laravel5.2"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mark Eilander",
+      "email": "mark.eilander@outlook.com"
+    }
+  ],
+  "require": {
+      "php": ">=5.5.9",
+      "laravel/framework": "5.1.*|5.2.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Eilander\\Validator\\": "src/"
+    }
+  }
+}
+
