@@ -34,6 +34,6 @@ class ValidatorExtended extends IlluminateValidator {
 	 * @return bool
 	 */
 	protected function validateHexadecimal( $attribute, $value) {
-		preg_match('^#[a-fA-F0-9]{6}$/i', $value);
+		preg_match("/^#[a-fA-F0-9]{6}$/i", $value);
 	}
 }	//end of class
