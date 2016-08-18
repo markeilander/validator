@@ -24,7 +24,7 @@ class ValidatorExtended extends IlluminateValidator {
 	 * @return bool
 	 */
 	protected function validateExtendedAlphaNum( $attribute, $value) {
-		return preg_match("/^[\pL\pM\pN\s_\-?!\"#$%&'@.,:;\]\[]+$/u", $value);
+		return preg_match("/^[\pL\pM\pN\s_\-?!\"#$%&'@.,:;\/\(\)\]\[]+$/u", $value);
 	}
 	/**
 	 * Hexadecimal
