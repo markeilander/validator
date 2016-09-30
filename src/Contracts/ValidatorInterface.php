@@ -16,7 +16,7 @@ interface ValidatorInterface {
      * @param $input
      * @return $this
      */
-    public function fails(array $input);
+    public function fails(array $input, $type = '', array $rules);
 
     /**
      * Errors
