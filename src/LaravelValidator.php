@@ -31,11 +31,16 @@ abstract class LaravelValidator implements ValidatorInterface {
         $this->validator = $validator;
     }
 
-    public function fails(array $input, $type = '')
+    public function fails(array $input, $type = '', array $rules)
     {
         $validationRules = static::$rules;
+        // use static propertu
         if (isset(static::$rules[$type])) {
             $validationRules = static::$rules[$type];
+        }
+        // use custom rules
+        if (count($rules)) {
+            $validationRules = $rules;
         }
 
         $validation = $this->validator->make($input, $validationRules, static::$messages);
