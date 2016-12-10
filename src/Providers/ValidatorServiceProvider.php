@@ -2,12 +2,11 @@
 
 namespace Eilander\Validator\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use Eilander\Validator\ValidatorExtended;
+use Illuminate\Support\ServiceProvider;
 
 /**
- * Class GatewayServiceProvider
- * @package Eilander\Gateway\Providers
+ * Class GatewayServiceProvider.
  */
 class ValidatorServiceProvider extends ServiceProvider
 {
@@ -19,22 +18,19 @@ class ValidatorServiceProvider extends ServiceProvider
     protected $defer = false;
 
     /**
-     *
      * @return void
      */
     public function boot()
     {
-        $this->app->validator->resolver( function( $translator, $data, $rules, $messages = array(), $customAttributes = array() ) {
-			return new ValidatorExtended( $translator, $data, $rules, $messages, $customAttributes );
-		});
+        $this->app->validator->resolver(function ($translator, $data, $rules, $messages = [], $customAttributes = []) {
+            return new ValidatorExtended($translator, $data, $rules, $messages, $customAttributes);
+        });
     }
 
     /**
-     *
      * @return void
      */
     public function register()
     {
-
     }
 }
