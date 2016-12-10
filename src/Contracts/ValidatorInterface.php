@@ -1,34 +1,33 @@
-<?php 
+<?php
+
 namespace Eilander\Validator\Contracts;
 
-use Illuminate\Contracts\Support\MessageBag;
-use Eilander\Validator\Exceptions\ValidatorException;
-
 /**
- * Interface ValidatorInterface
- * @package Eilander\Validator\Contracts
+ * Interface ValidatorInterface.
  */
-interface ValidatorInterface {
-
+interface ValidatorInterface
+{
     /**
-     * Check if there are any validation errors
+     * Check if there are any validation errors.
      *
      * @param $input
+     *
      * @return $this
      */
-    public function fails(array $input, $type = '', array $rules);
+    public function fails(array $input, $type, array $rules);
 
     /**
-     * Errors
+     * Errors.
      *
      * @return array
      */
     public function messages();
 
     /**
-     * Set Rules for Validation
+     * Set Rules for Validation.
      *
      * @param array $rules
+     *
      * @return $this
      */
     public function addRule($field, $rule);

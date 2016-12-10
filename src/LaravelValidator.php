@@ -1,28 +1,28 @@
-<?php 
+<?php
+
 namespace Eilander\Validator;
 
-use Illuminate\Validation\Factory;
 use Eilander\Validator\Contracts\ValidatorInterface;
+use Illuminate\Validation\Factory;
 
 /**
- * Class LaravelValidator
- * @package Eilander\Validator
+ * Class LaravelValidator.
  */
-abstract class LaravelValidator implements ValidatorInterface {
-
+abstract class LaravelValidator implements ValidatorInterface
+{
     protected $errors;
     protected static $rules;
-    protected static $messages = array();
+    protected static $messages = [];
 
     /**
-     * Validator
+     * Validator.
      *
      * @var \Illuminate\Validation\Factory
      */
     protected $validator;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param \Illuminate\Validation\Factory $validator
      */
@@ -31,7 +31,7 @@ abstract class LaravelValidator implements ValidatorInterface {
         $this->validator = $validator;
     }
 
-    public function fails(array $input, $type = '', array $rules)
+    public function fails(array $input, $type, array $rules)
     {
         $validationRules = static::$rules;
         // use static propertu
@@ -47,6 +47,7 @@ abstract class LaravelValidator implements ValidatorInterface {
 
         if ($validation->fails()) {
             $this->errors = $validation->messages();
+
             return true;
         }
 
