@@ -6,15 +6,17 @@ use Illuminate\Validation\Validator as IlluminateValidator;
 
 class ValidatorExtended extends IlluminateValidator
 {
-    protected $messages = [
-        'extended_alpha_num' => 'The :attribute may only contain letters, spaces, and dashes.',
-        'hexadecimal'        => 'The :attribute must follow format #[a-fA-F0-9]',
-    ];
-
+    // protected $messages = [
+    //     'extended_alpha_num' => 'The :attribute may only contain letters, spaces, and dashes.',
+    //     'hexadecimal'        => 'The :attribute must follow format #[a-fA-F0-9]',
+    // ];
     public function __construct($translator, $data, $rules, $messages = [], $customAttributes = [])
     {
         parent::__construct($translator, $data, $rules, $messages, $customAttributes);
-        $this->setCustomMessages($this->messages);
+        $this->setCustomMessages([
+            'extended_alpha_num' => 'The :attribute may only contain letters, spaces, and dashes.',
+            'hexadecimal'        => 'The :attribute must follow format #[a-fA-F0-9]',
+        ]);
     }
 
     /**
